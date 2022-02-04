@@ -2,26 +2,27 @@ import React from "react";
 import {Formik, Form, Field, ErrorMessage} from "formik";
 import * as Yup from "yup";
 import axios from "axios";
+import { useHistory } from "react-router-dom";
 
 function CreatePost() {
-    const initialValues = {
-        title: "",
-        postText: "",
-        username: "",
-    };
+  let history = useHistory();
+  const initialValues = {
+      title: "",
+      postText: "",
+      username: "",
+  };
 
-    const validationSchema = Yup.object().shape({
-        title: Yup.string().required(),
-        postText: Yup.string().required(),
-        username: Yup.string().min(3).max(15).required(),
-    });
+  const validationSchema = Yup.object().shape({
+      title: Yup.string().required(),
+      postText: Yup.string().required(),
+      username: Yup.string().min(3).max(15).required(),
+  });
 
-    const onSubmit = (data) => {
-        axios.post("http://localhost:3001/posts", data).then((response) => {
-          //setListOfPosts(response.data);
-          console.log("IT WORKED");
-        });
-    };
+  const onSubmit = (data) => {
+      axios.post("http://localhost:3001/posts", data).then((response) => {
+        history.push("/");
+      });
+  };
 
   return (
     <div className="createPostPage">

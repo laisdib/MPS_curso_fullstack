@@ -23,17 +23,17 @@ body {
   border: 1px solid lightgray;
   font-family: Arial, Helvetica, sans-serif;
 
-  box-shadow: rgba(107, 75, 75, 0.2) 0px 2px 8px 0px;
+  box-shadow: rgba(75, 92, 107, 0.2) 0px 2px 8px 0px;
 }
 
 .post:hover {
-  box-shadow: rgba(107, 75, 75, 0.2) 0px 7px 29px 0px;
+  box-shadow: rgba(75, 92, 107, 0.2) 0px 7px 29px 0px;
   cursor: pointer;
 }
 .post .title {
   flex: 20%;
-  border-bottom: 1px solid rgb(199, 168, 168);
-  background-color: rgb(240, 142, 167);
+  border-bottom: 1px solid rgb(58, 150, 255);
+  background-color: rgb(58, 150, 255);
   display: grid;
   place-content: center;
   color: white;
@@ -45,18 +45,18 @@ body {
   flex: 60%;
   display: grid;
   place-content: center;
-  color: rgb(226, 114, 142);
+  color: rgb(0, 0, 0);
   margin-left: 50px;
   margin-right: 50px;
 }
 
 .post .footer {
   flex: 20%;
-  border-top: 1px solid rgb(199, 168, 168);
+  border-top: 1px solid rgb(58, 150, 255);
   display: flex;
   align-items: center;
   padding-left: 25px;
-  background-color: rgb(240, 142, 167);
+  background-color: rgb(58, 150, 255);
   color: white;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;

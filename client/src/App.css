@@ -46,6 +46,8 @@ body {
   display: grid;
   place-content: center;
   color: rgb(226, 114, 142);
+  margin-left: 50px;
+  margin-right: 50px;
 }
 
 .post .footer {

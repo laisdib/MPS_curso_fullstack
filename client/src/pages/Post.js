@@ -52,7 +52,7 @@ function Post() {
       headers: { accessToken: localStorage.getItem("accessToken") },
     }).then(() => {
       setComments(comments.filter((val) => {
-        return val.id != id;
+        return val.id !== id;
       }));
     });
   };

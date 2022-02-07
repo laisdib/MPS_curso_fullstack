@@ -41,19 +41,20 @@ function CreatePost() {
         validationSchema={validationSchema}
       >
         <Form className="formContainer">
+        <h1> Create a Post </h1>
           <label>Title: </label>
           <ErrorMessage name="Title" component="span" />
           <Field
             id="inputCreatePost"
             name="title"
-            placeholder="(Ex. Title...)"
+            placeholder="Enter a title"
           />
           <label>Post: </label>
           <ErrorMessage name="Post Text" component="span" />
           <Field
             id="inputCreatePost"
             name="postText"
-            placeholder="(Ex. Post...)"
+            placeholder="Enter your post"
           />
 
           <button type="submit"> Create Post </button>

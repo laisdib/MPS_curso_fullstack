@@ -4,6 +4,7 @@ const { Users } = require("../models");
 const bcrypt = require("bcrypt");
 const { validateToken } = require("../middlewares/AuthMiddleware");
 const { sign } = require("jsonwebtoken");
+const { Router } = require("express");
 
 router.post("/", async (req, res) => {
     const { username, password } = req.body;
@@ -41,6 +42,20 @@ router.get("/basicinfo/:id", async (req, res) => {
     });
 
     res.json(basicInfo);
+});
+
+router.put("/changepassword", validateToken, async (req, res) => {
+    const { oldPassword, newPassword } = req.body;
+    const user = await Users.findOne({ where: { username: req.user.username } });
+
+    bcrypt.compare(oldPassword, user.password).then(async (match) => {
+        if (!match) res.json({ error: "Wrong password entered!" });
+
+        bcrypt.hash(newPassword, 10).then((hash) => {
+            Users.update({ password: hash }, { where: { username: req.user.username } });
+            res.json("SUCCESS");
+        });
+    });
 });
 
 module.exports = router;

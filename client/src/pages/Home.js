@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import ThumbUpAltIcon from '@material-ui/icons/ThumbUpAlt';
 import { AuthContext } from "../helpers/AuthContext";
 
@@ -62,10 +62,7 @@ function Home() {
     <div>
       {listOfPosts.map((value, key) => {
         return (
-          <div
-            key={key}
-            className="post"
-          >
+          <div key={key} className="post">
             <div className="title"> {value.title} </div>
             <div className="body"
               onClick={() => {
@@ -73,7 +70,9 @@ function Home() {
               }}
             > {value.postText} </div>
             <div className="footer">
-              <div className="username"> {value.username} </div>
+              <div className="username">
+                <Link to={`/profile/${value.UserId}`}> {value.username} </Link>
+              </div>
               <div className="buttons">
                 <ThumbUpAltIcon
                   onClick={() => {

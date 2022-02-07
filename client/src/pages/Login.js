@@ -25,15 +25,20 @@ function Login() {
 
   return (
     <div className="loginContainer">
-      <label> Username: </label>
-      <input type="text" onChange={(event) => {
-        setUsername(event.target.value);
-      }}
+      <h1> Login </h1>
+      <input
+        type="text"
+        placeholder="Username"
+        onChange={(event) => {
+          setUsername(event.target.value);
+        }}
       />
-      <label> Password: </label>
-      <input type="password" onChange={(event) => {
-        setPassword(event.target.value);
-      }}
+      <input
+        type="password"
+        placeholder="Password"
+        onChange={(event) => {
+          setPassword(event.target.value);
+        }}
       />
 
       <button onClick={login}> Login </button>

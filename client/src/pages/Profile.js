@@ -23,12 +23,12 @@ function Profile() {
     return (
         <div className="profilePageContainer">
             <div className="basicInfo">
-                <h1> Username: {username} </h1>
+                <h1> {username} </h1>
                 {authState.username === username && (
                     <button onClick={() => {
                         history.push("/changepassword");
                     }}
-                    > Change my password </button>
+                    > Change Password </button>
                 )}
             </div>
             <div className="listOfPosts">
@@ -44,7 +44,7 @@ function Profile() {
                             <div className="footer">
                                 <div className="username"> {value.username} </div>
                                 <div className="buttons">
-                                    <label> {value.Likes.length} </label>
+                                    <label> Likes: {value.Likes.length} </label>
                                 </div>
                             </div>
                         </div>

@@ -21,7 +21,7 @@ function ChangePassword() {
     };
 
     return (
-        <div>
+        <div className="changePassword">
             <h1>Change you password</h1>
             <input
                 type="text"
@@ -34,7 +34,7 @@ function ChangePassword() {
                 onChange={(event) => {
                     setNewPassword(event.target.value);
                 }} />
-            <button onClick={changePassword}> Save changes </button>
+            <button onClick={changePassword}> Save Changes </button>
         </div>
     );
 }

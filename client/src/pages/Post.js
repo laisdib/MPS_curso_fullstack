@@ -136,12 +136,18 @@ function Post() {
           {comments.map((comment, key) => {
             return (
               <div key={key} className="comment">
-                {comment.commentBody}
-                <label> Username: {comment.username} </label>
+                <div className="left">
+                  <div className="user">
+                    <label> {comment.username} </label>
+                  </div>
+                  <div className="text">
+                    {comment.commentBody}
+                  </div>
+                </div>
                 {authState.username === comment.username && (
                   <button onClick={() => {
                     deleteComment(comment.id);
-                  }}> X </button>
+                  }}> Delete Comment </button>
                 )}
               </div>
             );
